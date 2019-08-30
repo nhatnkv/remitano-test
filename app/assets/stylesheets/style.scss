@@ -1,0 +1,13 @@
+.nav-right {
+  li {
+    &.welcome-email, &.share-video-btn {
+      padding-left: 1.5rem;
+    }
+
+    padding-left: 1rem;
+  }
+}
+
+.nav-border-bottom {
+  border-bottom: 1px solid;
+}

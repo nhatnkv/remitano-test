@@ -1,0 +1,24 @@
+%nav.navbar.navbar-expand-lg.navbar-light.nav-border-bottom
+  %a.navbar-brand{:href => "#"} Funny Movies
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse.nav-right
+    %ul.navbar-nav.ml-auto
+      - if user_signed_in?
+        %li.welcome-email
+          %span.navbar-text.welcome-email
+            = "Welcome #{current_user.email}"
+        %li.share-video-btn
+          %button.btn.btn-dark.my-2.my-sm-0{:type => "submit"} Search
+        %li
+          = button_to destroy_user_session_path, method: :delete, class: 'btn btn-dark' do
+            %span
+              Logout
+      - else
+        %li
+          = form_tag login_or_register_path, class: 'navbar-form form-inline' do
+            .form-group
+              = text_field_tag :username, "", {class: 'form-control mr-sm-2', placeholder: "username"}
+            .form-group
+              = text_field_tag :password, "", {class: 'form-control mr-sm-2', placeholder: "password"}
+            = submit_tag 'Login / Register', class: 'btn btn-dark'
