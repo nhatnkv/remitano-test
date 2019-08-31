@@ -6,17 +6,27 @@ class HomeController < ApplicationController
   end
 
   def login_or_register
-    byebug
-    if @auth_action
+    if user_existed
+      if user.valid_password?(params[:password])
+        sign_in(user)
+      else
+        flash[:error] = "authenticate-fail"
+      end
     else
-      
+      new_user = User.create(username: params[:username], password: params[:password])
+      sign_in(user)
     end
+    redirect_to root_path
   end
 
   private
 
   def user_existed
-    redirect_to root_path if params[:username].blank?
-    @auth_action = User.find_by(username: params[:username]).present?
+    redirect_to root_path if params[:username].blank? || params[:password].blank?
+    @auth_action = user.present?
+  end
+
+  def user
+    User.find_by(username: params[:username])
   end
 end
