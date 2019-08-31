@@ -1,0 +1,17 @@
+.nav-right {
+  li {
+    &.welcome, &.share-video-btn {
+      padding-left: 1.5rem;
+    }
+
+    padding-left: 1rem;
+  }
+}
+
+.nav-border-bottom {
+  border-bottom: 1px solid;
+}
+
+.authenticate-fail {
+  border: 1px solid red;
+}
