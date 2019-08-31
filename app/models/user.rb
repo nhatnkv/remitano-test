@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :rememberable
 
+  has_many :movies,  foreign_key: :sharer_id
+
   def email_required?
     false
   end

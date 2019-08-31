@@ -1,0 +1,14 @@
+%main.share-form
+  .cotainer
+    .row.justify-content-center
+      .col-md-6
+        .card
+          .card-header Share movie
+          .card-body
+            = form_for(@movie, url: shared_movie_path) do |f|
+              .form-group.row
+                %label.col-md-3.col-form-label{:for => "youtube_url"} Youtube URL
+                .col-md-9
+                  = f.url_field :url, {class: "form-control #{flash[:error]}", id: "youtube_url", name:  "youtube_url"}
+              .col-md-9.offset-md-3.share-btn
+                = f.submit 'Share', class: 'btn btn-primary btn-block'

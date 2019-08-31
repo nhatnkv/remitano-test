@@ -12,6 +12,18 @@
   border-bottom: 1px solid;
 }
 
-.authenticate-fail {
+.error {
   border: 1px solid red;
+}
+
+.share-form
+{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.share-btn
+{
+  padding-right: 0px;
+  padding-left: 6px;
 }
