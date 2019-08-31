@@ -9,7 +9,7 @@
           %span.navbar-text.welcome
             = "Welcome #{current_user.username}"
         %li.share-video-btn
-          %button.btn.btn-dark.my-2.my-sm-0{type: "submit", 'data-toggle': 'modal', 'data-target': '#shareMovie'} Share a movie
+          = link_to 'Share a movie', share_movie_path, class: 'btn btn-dark'
         %li
           = button_to destroy_user_session_path, method: :delete, class: 'btn btn-dark' do
             %span
@@ -22,4 +22,3 @@
             .form-group
               = text_field_tag :password, "", {class: "form-control mr-sm-2 #{flash[:error]}", placeholder: "password"}
             = submit_tag 'Login / Register', class: 'btn btn-dark'
-

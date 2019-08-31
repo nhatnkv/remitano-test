@@ -10,7 +10,7 @@ class HomeController < ApplicationController
       if user.valid_password?(params[:password])
         sign_in(user)
       else
-        flash[:error] = "authenticate-fail"
+        flash[:error] = "error"
       end
     else
       new_user = User.create(username: params[:username], password: params[:password])
