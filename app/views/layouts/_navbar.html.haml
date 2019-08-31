@@ -5,8 +5,8 @@
   #navbarSupportedContent.collapse.navbar-collapse.nav-right
     %ul.navbar-nav.ml-auto
       - if user_signed_in?
-        %li.welcome-email
-          %span.navbar-text.welcome-email
+        %li.welcome
+          %span.navbar-text.welcome
             = "Welcome #{current_user.username}"
         %li.share-video-btn
           %button.btn.btn-dark.my-2.my-sm-0{type: "submit", 'data-toggle': 'modal', 'data-target': '#shareMovie'} Share a movie
@@ -22,3 +22,4 @@
             .form-group
               = text_field_tag :password, "", {class: "form-control mr-sm-2 #{flash[:error]}", placeholder: "password"}
             = submit_tag 'Login / Register', class: 'btn btn-dark'
+
