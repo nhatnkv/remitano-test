@@ -1,0 +1,17 @@
+.movie-list.row.justify-content-center
+	- @movies.each do |movie|
+		.col-md-7
+			.movie-item.row
+				.embed-movie.col-md-6
+					%iframe{:allowfullscreen => "", :frameborder => "0", :src => "https://www.youtube.com/embed/#{movie.youtube_video_id}?rel=0=#{params[:autoplay] || 0}"}
+				- move_info_api = video_info(movie).to_h
+				.movie-detail.col-md-6
+					.movie-title
+						= move_info_api[:title]
+					.movie-sharer
+						= "Shared by: #{movie.user.username}"
+					.movie-description
+						%span
+							Description
+						.content
+							= truncate(move_info_api[:description], length: 100)

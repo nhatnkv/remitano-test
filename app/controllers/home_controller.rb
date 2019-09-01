@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   include Devise::Controllers::Helpers
   
   def index
+    @movies = Movie.all
   end
 
   def login_or_register

@@ -16,14 +16,36 @@
   border: 1px solid red;
 }
 
-.share-form
-{
+.share-form {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
 
-.share-btn
-{
+.share-btn {
   padding-right: 0px;
   padding-left: 6px;
+}
+
+.movie-list {
+  margin-top: 40px;
+
+  .movie-item {
+    margin-top: 20px;
+  }
+
+  .movie-title {
+    font-weight: bold;
+  }
+
+  .movie-sharer {
+    font-size: 13px;
+  }
+
+  .movie-description {
+    font-weight: bold;
+
+    .content {
+      font-weight: initial;
+    }
+  }
 }
