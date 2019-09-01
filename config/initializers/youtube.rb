@@ -1,1 +1,1 @@
-Yt.configuration.api_key = 'AIzaSyDFpd_Eb1oVWfLdw7QURow2csiq4MPfUV4'
+Yt.configuration.api_key = ENV['YOUTUBE_KEY_API']

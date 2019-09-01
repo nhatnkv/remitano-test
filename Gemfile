@@ -67,3 +67,4 @@ gem "haml-rails", "~> 2.0"
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'yt', '~> 0.32.0'
+gem 'dotenv-rails'
