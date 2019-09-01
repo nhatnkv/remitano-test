@@ -1,6 +1,4 @@
 class Movie < ApplicationRecord
-  validates :url, presence: true
-  validates :url, format: {with: /(http(s)?:\/\/)?((w){3}.)?youtu(be|.be)?(\.com)?\/.+/}
-
+  validates :youtube_video_id, presence: true
   belongs_to :user, foreign_key: :sharer_id
 end
