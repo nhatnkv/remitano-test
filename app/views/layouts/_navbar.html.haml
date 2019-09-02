@@ -20,5 +20,5 @@
             .form-group
               = text_field_tag :username, "", {class: "form-control mr-sm-2 #{flash[:error]}", placeholder: "username"}
             .form-group
-              = text_field_tag :password, "", {class: "form-control mr-sm-2 #{flash[:error]}", placeholder: "password"}
+              = password_field_tag :password, "", {class: "form-control mr-sm-2 #{flash[:error]}", placeholder: "password"}
             = submit_tag 'Login / Register', class: 'btn btn-dark'
