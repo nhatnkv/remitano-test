@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
-  database: remitano-test_production
-  username: remitano-test
-  password: <%= ENV['REMITANO-TEST_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  database: <%= ENV['REMITANO_TEST_DATABASE_NAME'] %>
+  host: <%= ENV['REMITANO_TEST_DATABASE_HOST'] %>
+  port: <%= ENV['REMITANO_TEST_DATABASE_PORT'] %>
+  username: <%= ENV['REMITANO_TEST_DATABASE_USERNAME'] %>
+  password: <%= ENV['REMITANO_TEST_DATABASE_PASSWORD'] %>
