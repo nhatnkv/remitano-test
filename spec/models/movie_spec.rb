@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Movie, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'belongs to a user' do
+    expect(
+      described_class.reflect_on_association(:user).macro
+    ).to eq :belongs_to
+  end
 end
