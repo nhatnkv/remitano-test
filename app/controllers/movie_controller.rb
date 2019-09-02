@@ -17,6 +17,8 @@ class MovieController < ApplicationController
     end
   end
 
+  private
+
   def get_video_id
     url = params[:youtube_video_id]
     url = url.gsub(/(>|<)/i,'').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/)

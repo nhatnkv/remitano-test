@@ -5,8 +5,4 @@ class User < ApplicationRecord
          :rememberable
 
   has_many :movies,  foreign_key: :sharer_id
-
-  def email_required?
-    false
-  end
 end

@@ -28,6 +28,6 @@ class HomeController < ApplicationController
   end
 
   def user
-    User.find_by(username: params[:username])
+    @user ||= User.find_by(username: params[:username])
   end
 end
